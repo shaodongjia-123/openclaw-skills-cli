@@ -1,0 +1,15 @@
+{
+  "capturedAt": "2026-02-15T00:00:00+08:00",
+  "source": "FastMoss /zh/e-commerce/newProducts",
+  "filters": {
+    "region": "TH",
+    "is_cross_border": 1,
+    "l1_cid": 10,
+    "note": "居家日用（from URL l1_cid=10)"
+  },
+  "pages": {
+    "1": {"url": "https://www.fastmoss.com/zh/e-commerce/newProducts?page=1&is_cross_border=1&l1_cid=10&region=TH", "rows": []},
+    "2": {"url": "https://www.fastmoss.com/zh/e-commerce/newProducts?page=2&is_cross_border=1&l1_cid=10&region=TH", "rows": []},
+    "3": {"url": "https://www.fastmoss.com/zh/e-commerce/newProducts?page=3&is_cross_border=1&l1_cid=10&region=TH", "rows": []}
+  }
+}

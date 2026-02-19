@@ -1,0 +1,29 @@
+GitHub 网页上传指南
+-------------------
+
+第1步：创建仓库
+1. 访问：https://github.com/new
+2. Repository name: openclaw-skills-cli
+3. Description: OpenClaw Skills CLI - AI coding skills tool
+4. 选择 Public（公开）
+5. 不要勾选任何初始化选项
+6. 点击 Create repository
+
+第2步：上传文件
+1. 点击 "uploading an existing file"
+2. 打开文件夹：C:\Users\MECHREVO\.openclaw\workspace\openclaw-skills-cli
+3. 按 Ctrl + A 全选所有文件
+4. 拖到GitHub网页的上传区域
+5. 等待上传完成
+
+第3步：提交
+1. 滚动到底部
+2. 在 "Commit changes" 输入框输入：
+   Initial commit: MVP with 6 skills + CLI tool
+
+3. 点击绿色按钮 "Commit changes"
+
+第4步：完成！
+✅ 仓库地址：https://github.com/shaodongjia-123/openclaw-skills-cli
+
+告诉我："上传成功！" 然后我们继续！

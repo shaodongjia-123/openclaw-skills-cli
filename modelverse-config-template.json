@@ -1,0 +1,31 @@
+{
+  "models": {
+    "claude-sonnet-4-5": {
+      "id": "claude-sonnet-4-5-20250929",
+      "type": "anthropic",
+      "provider": "modelverse",
+      "base_url": "https://api.modelverse.cn",
+      "api_key": "YOUR_API_KEY_HERE",
+      "max_tokens": 4096,
+      "temperature": 0.7,
+      "supports": ["text", "image", "tools"],
+      "description": "优云智算 Claude 4.5 Sonnet - 支持图片分析和工具调用"
+    },
+    "claude-sonnet-4-5-vision": {
+      "id": "claude-sonnet-4-5-20250929",
+      "type": "anthropic",
+      "provider": "modelverse",
+      "base_url": "https://api.modelverse.cn",
+      "api_key": "YOUR_API_KEY_HERE",
+      "max_tokens": 4096,
+      "use_for": "image",
+      "description": "优云智算 Claude 4.5 Sonnet - 专用图片分析模型"
+    }
+  },
+  "agents": {
+    "main": {
+      "default_model": "claude-sonnet-4-5",
+      "image_model": "claude-sonnet-4-5-vision"
+    }
+  }
+}

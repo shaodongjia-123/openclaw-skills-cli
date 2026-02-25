@@ -1,8 +1,11 @@
 const chalk = require('chalk');
 const ora = require('ora');
+const fs = fs.promises;
+const path = require('path');
+
+const SKILLS_DIR = path.join(__dirname, '../../skills');
 
 const skillsData = {
-  // Original 6 Skills
   'frontend-design': {
     name: '前端设计技能',
     englishName: 'Frontend Design',
@@ -57,8 +60,6 @@ const skillsData = {
     tags: ['tools', 'creator', 'template'],
     icon: '🛠️'
   },
-
-  // E-commerce Skills 7-10 (Phase 1)
   'video-content-creator': {
     name: '视频内容创作技能',
     englishName: 'Video Content Creator',
@@ -98,58 +99,6 @@ const skillsData = {
     tags: ['tiktok', 'content-analysis', 'video', 'viral', 'marketing'],
     icon: '📺',
     isNew: true
-  },
-
-  // New Skills 11-15 (Phase 2 - From TikTok Shop Tutorial Analysis)
-  'tiktok-shop-eligibility-checker': {
-    name: 'TikTok Shop开店资格检查技能',
-    englishName: 'TikTok Shop Eligibility Checker',
-    description: '智能检查账号是否符合TikTok Shop开店要求，提供详细分析和建议',
-    version: '1.0.0',
-    author: 'OpenClaw Team',
-    tags: ['tiktok', 'shop', 'eligibility', '开店', '审核'],
-    icon: '✅',
-    isNew: true
-  },
-  'account-matrix-planner': {
-    name: '账号矩阵规划技能',
-    englishName: 'Account Matrix Planner',
-    description: '智能规划TikTok Shop账号矩阵，最大化账号起量效果，降低封号风险',
-    version: '1.0.0',
-    author: 'OpenClaw Team',
-    tags: ['account-matrix', 'tiktok', 'growth', 'ip-isolation', 'risk-management'],
-    icon: '📱',
-    isNew: true
-  },
-  'tiktok-ai-content-factory': {
-    name: 'TikTok AI内容工厂技能（增强版）',
-    englishName: 'TikTok AI Content Factory',
-    description: '一站式AI内容生产平台，为TikTok Shop账号矩阵批量生成高质量、差异化的短视频内容',
-    version: '2.0.0',
-    author: 'OpenClaw Team',
-    tags: ['tiktok', 'content-factory', 'ai', 'batch-production', 'automation', '多语言'],
-    icon: '🏭',
-    isNew: true
-  },
-  'influencer-matcher': {
-    name: '达人匹配推荐技能',
-    englishName: 'Influencer Matcher',
-    description: '智能匹配TikTok Shop适合的达人，预估合作效果，优化达人带货策略',
-    version: '1.0.0',
-    author: 'OpenClaw Team',
-    tags: ['influencer', 'tiktok', '达人', 'partnership', 'roi-prediction', '合作模式'],
-    icon: '🤝',
-    isNew: true
-  },
-  'tool-stack-optimizer': {
-    name: '工具栈优化推荐技能',
-    englishName: 'Tool Stack Optimizer',
-    description: '智能推荐TikTok Shop必备的运营工具栈，优化预算和效率，避免购买不必要的服务',
-    version: '1.0.0',
-    author: 'OpenClaw Team',
-    tags: ['tools', 'optimization', 'stack', 'tiktok-shop', 'cost-optimization', 'budget'],
-    icon: '🛠️',
-    isNew: true
   }
 };
 
@@ -160,21 +109,29 @@ async function listSkills() {
     await new Promise(resolve => setTimeout(resolve, 500));
     spinner.stop();
 
-    console.log(chalk.bold('\n📦 Available Skills (15 skills):\n'));
+    console.log(chalk.bold('\n📦 Available Skills (10 skills):\n'));
 
     Object.entries(skillsData).forEach(([key, skill], index) => {
-      const newTag = skill.isNew ? ' ✨ NEW!' : '';
-      const phase = skill.isNew ? (index < 10 ? 'Phase 1' : 'Phase 2') : '';
-      console.log(`${skill.icon} ${key.padEnd(40)} ${skill.name}${newTag}${phase}`);
+      const status = skill.isNew ? '✨ NEW!' : '';
+      console.log(`${skill.icon} ${key.padEnd(30)} ${skill.name} ${status}`);
       console.log(`   ${chalk.gray(skill.description)}`);
+      console.log(`   ${chalk.dim(`Tags: ${skill.tags.join(', ')}`)}\n`);
     });
 
-    console.log(chalk.gray('\n─'.repeat(60)));
-    console.log(chalk.yellow('🌟 Phase 2 - TikTok Shop专用工具（新增5个）'));
-    console.log(chalk.gray('📊 新增: +5技能 → 总计15技能'));
-    console.log(chalk.gray('🎯 定位: 东南亚TikTok跨境电商全流程解决方案'));
-    console.log(chalk.gray('💰 目标: 12个月$50,000年收入'));
-    console.log(chalk.gray('─'.repeat(60) + '\n'));
+    console.log(chalk.gray('─'.repeat(60)));
+    console.log(chalk.yellow('💡 New: 4个跨境电商专用技能！🛒️️ 东南亚TikTok专属！'));
+    console.log(chalk.gray('🎨 Frontend - UI/Storefront');
+    console.log(chalk.gray('🌐 Competitor - Shopee/Lazada数据'));
+    console.log(chalk.gray('🎬 Video - 短视频创作'));
+    console.log(chalk.gray('📊 Trends - 热门趋势'));
+    console.log(chalk.gray('📺 TikTok - 专属TikTok分析'));
+    console.log(chalk.gray('🎯 Lead - 客户画像分析'));
+    console.log(chalk.gray('📝 Research - 研究/文案'));
+    console.log(chalk.gray('💳 Stripe - 支付集成'));
+    console.log(chalk.gray('🔍 Domain - 域名查询'));
+    console.log(chalk.gray('🛠️ Creator - 创建自定义技能'));
+    console.log(chalk.gray('────────────────────────────────────────────────'));
+    console.log(chalk.dim('Run `openclaw info <skill>` for detailed information') + '\n');
 
   } catch (error) {
     spinner.fail(chalk.red('Failed to load skills'));

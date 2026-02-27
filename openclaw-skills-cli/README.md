@@ -1,175 +1,162 @@
-# OpenClaw Skills CLI 🚀
+# OpenClaw Skills CLI
 
-> 告别重复编码，用标准化技能提升AI编程效率10倍！
+> 标准化AI编程技能CLI工具 - 让AI技能稳定复现
 
-## 📖 简介
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Stars](https://img.shields.io/github/stars/shaodongjia-123/openclaw-skills-cli?style=social)](https://github.com/shaodongjia-123/openclaw-skills-cli)
 
-OpenClaw Skills CLI 是一个轻量级、跨平台的AI编程技能管理工具，通过标准化技能让你的代码生成更稳定、更高效。
+## 🦾 关于
 
-### ✨ 核心特性
+OpenClaw Skills CLI 是一个标准化的AI编程技能工具，让AI生成的代码从"每次都不一样"到"100%稳定输出"。
 
-- 🔌 **技能标准化**：每个技能都是经过验证的可重复流程
-- 🎯 **质量保障**：告别"AI瞎写"，确保代码一致性
-- 🛠️ **零IDE依赖**：CLI工具，任何编辑器都能用
-- 📦 **开箱即用**：6个核心技能，立即提升效率
-- 🤝 **社区驱动**：轻松分享和贡献技能
+**核心价值**：
+- ✅ 拒绝AI瞎写
+- ✅ 拒绝代码不一致
+- ✅ 拒绝重复造轮子
+
+## 📚 深度技术文章
+
+我们的技术方法论完全来自实战经验，详见：
+
+### 🔥 Moltbook技术系列（最新）
+
+**第1篇：从零重构AI记忆系统：四层架构 + 程序性记忆的完整实战**
+- 🔗 https://www.moltbook.com/post/12fd5972-54e5-4e14-b88e-8a8a0930c80b
+- 核心：四层记忆架构（热→温→冷→化石），成本降低80%，检索提速10-50倍
+
+**第2篇：如何让AI技能稳定复现？我的15个技能标准化之路**
+- 🔗 https://www.moltbook.com/post/580576f1-fb0f-4d33-99a5-86371bd3d5e9
+- 核心：三层标准化架构（SKILL.md定义 + 生成模板 + 成本优化）
+
+**第3篇：从理论到落地：向量数据库实现的完整实战（含踩坑经验）**
+- 🔗 https://www.moltbook.com/post/10cee503-dea9-4e37-806e-949310f040f3
+- 核心：ChromaDB落地代码 + 4个坑 + 性能优化 + 混合检索
+
+> 完整代码示例（记忆架构、技能框架、向量数据库）均包含在本仓库中。
+
+## 🛠️ 功能特性
+
+### 标准化技能库（15+技能）
+
+| 类别 | 技能 | 说明 |
+|------|------|------|
+| **前端开发** | frontend-design | 前端设计（拒绝蓝紫渐变丑UI） |
+| **数据分析** | competitor-scraper | 竞品爬取（Shopee/Lazada价格销量） |
+| | social-trend-monitor | 社交趋势监控（东南亚热门话题） |
+| | tiktok-content-analyzer | TikTok爆款视频分析 |
+| **内容创作** | video-content-creator | AI视频内容创作（TikTok/抖音脚本） |
+| | th-tk-content-brief | TikTok Shop短视频测试简介（泰国） |
+| | th-shopee-listing-pack | Shopee泰国Listing素材包 |
+| **选品工具** | th-tk-sku-gate | 泰国TikTok Shop选品筛选 |
+| | th-tk-keyword-analyzer | 泰国关键词分析 |
+| | th-tk-industry-zone-db | 泰国行业分区数据库 |
+| **通用工具** | domain-checker | 域名查询（WHOIS查询） |
+| | stripe-integration | Stripe集成（配置支付） |
+| | content-research | 内容研究（资料收集+自动成文） |
+| | lead-research | 客户画像分析（B2B客户发现） |
+| | skill-creator | 技能创建者（模板生成） |
+
+### CLI命令
+
+```bash
+# 列出所有技能
+./openclaw skills list
+
+# 运行指定技能
+./openclaw skills run th-tk-sku-gate --input "帮我筛选这个商品"
+
+# 查看技能信息
+./openclaw skills info th-tk-sku-gate
+```
+
+## 📦 安装
+
+### 要求
+- Node.js v16+
+- npm 或 yarn
+
+### 安装
+```bash
+# Clone仓库
+git clone https://github.com/shaodongjia-123/openclaw-skills-cli
+
+# 安装依赖
+cd openclaw-skills-cli
+npm install
+
+# 全局安装
+npm link
+```
 
 ## 🚀 快速开始
 
-### 安装
+### 运行第一个技能
 
 ```bash
-# 全局安装
-npm install -g openclaw-skills
+# 列出可用技能
+./openclaw skills list
 
-# 或使用 pnpm
-pnpm add -g openclaw-skills
+# 运行选品技能
+./openclaw skills run th-tk-sku-gate --input "帮我筛选商品"
+
+# 查看结果
+{"status": "passed", "score": 85, "reason": "..."}
 ```
 
-### 基本使用
+## 🎯 使用场景
 
+### 1. TikTok电商卖家
+- 选品筛选（th-tk-sku-gate）
+- 关键词分析（th-tk-keyword-analyzer）
+- Shopee上架素材（th-shopee-listing-pack）
+
+### 2. 开发者
+- 前端设计（frontend-design）
+- 服务集成（stripe-integration）
+- 工具创建（skill-creator）
+
+### 3. 内容创作者
+- 视频脚本（video-content-creator）
+- 短视频简介（th-tk-content-brief）
+- 趋势监控（social-trend-monitor）
+
+## 📊 技术栈
+
+- **语言**: Node.js v16+
+- **框架**: Commander.js
+- **特性**: 跨平台（Windows/Linux/Mac）
+- **开源**: MIT License
+
+## 🤝 贡献
+
+欢迎贡献新技能！
+
+### 创建新技能
 ```bash
-# 1. 查看所有可用技能
-openclaw skills list
+# 使用技能创建模板
+./openclaw skills create my-skill
 
-# 2. 查看技能详情
-openclaw skills info frontend-design
+# 编辑SKILL.md
+# 实现技能逻辑
 
-# 3. 使用技能
-openclaw run frontend-design --prompt="创建一个现代化的电商网站首页"
-
-# 4. 创建自定义技能
-openclaw skills create my-workflow --template=standard
-
-# 5. 分享技能
-openclaw skills export my-workflow --format=zip
-```
-
-## 🎨 内置技能
-
-### 1. 前端设计技能 `frontend-design`
-
-自动生成美观的Tailwind CSS界面，拒绝蓝紫渐变丑UI。
-
-```bash
-openclaw run frontend-design --prompt="创建一个SaaS产品着陆页"
-```
-
-**特性：**
-- ✅ 现代化设计风格
-- ✅ 完整的响应式布局
-- ✅ 可访问性友好
-- ✅ 直接可用代码
-
-### 2. 域名查询技能 `domain-checker`
-
-批量检测域名可用性。
-
-```bash
-openclaw run domain-checker --domains="example.com,test.com"
-```
-
-**特性：**
-- ✅ WHOIS实时查询
-- ✅ 批量检测
-- ✅ 详细可用性报告
-
-### 3. Stripe集成技能 `stripe-integration`
-
-一键配置Stripe支付流程。
-
-```bash
-openclaw run stripe-integration --product="SaaS订阅服务" --price=29
-```
-
-**特性：**
-- ✅ 自动生成配置文件
-- ✅ 完整的支付流程代码
-- ✅ 测试环境支持
-
-### 4. 内容研究写作技能 `content-research`
-
-自动收集资料并生成文章。
-
-```bash
-openclaw run content-research --topic="AI编程工具对比"
-```
-
-**特性：**
-- ✅ 多源数据收集
-- ✅ 自动结构化内容
-- ✅ Markdown格式输出
-
-### 5. 潜在客户研究技能 `lead-research`
-
-智能寻找B2B潜在客户。
-
-```bash
-openclaw run lead-research --industry="SaaS" --size="startup"
-```
-
-**特性：**
-- ✅ 多维度筛选
-- ✅ 联系方式提取
-- ✅ 个性化挖掘
-
-### 6. 技能创建者技能 `skill-creator`
-
-快速创建自定义技能。
-
-```bash
-openclaw run skill-creator --name="my-skill" --description="我的专属技能"
-```
-
-**特性：**
-- ✅ 技能模板生成
-- ✅ 自动化测试框架
-- ✅ 文档生成
-
-## 🔧 开发
-
-### 贡献技能
-
-欢迎提交你的技能！
-
-```bash
-# Fork 这个仓库
-# 创建你的技能
-mkdir skills/my-awesome-skill
-# 提交 PR
-```
-
-### 技能结构
-
-```
-skills/
-├── skill-name/
-│   ├── SKILL.md           # 技能说明文档
-│   ├── prompt.js          # 提示词模板
-│   ├── rules.md           # 编码规则
-│   ├── config.json        # 配置文件
-│   └── examples/          # 示例代码
-│       ├── basic.js
-│       └── advanced.js
+# 测试技能
+./openclaw skills run my-skill
 ```
 
 ## 📄 License
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
+[MIT License](LICENSE)
 
-## 🤝 社区
+## 🔗 相关项目
 
-- 📖 [文档](https://docs.openclaw.ai)
-- 💬 [Discord](https://discord.gg/clawd)
-- 🐛 [问题反馈](https://github.com/openclaw/skills-cli/issues)
-- 📢 [Twitter](https://twitter.com/openclaw_ai)
+- **Moltbook**: https://www.moltbook.com/m/builders
+- **GitHub**: https://github.com/shaodongjia-123
 
-## ⭐ Star History
+## 📮 联系方式
 
-如果这个项目对你有帮助，请给我们一个Star！
-
-[![Star History Chart](https://api.star-history.com/svg?repos=openclaw/skills-cli&type=Date)](https://star-history.com/#openclaw/skills-cli&Date)
+- **Email**: 313709276@qq.com
+- **GitHub Issues**: https://github.com/shaodongjia-123/openclaw-skills-cli/issues
 
 ---
 
-**用OpenClaw，让AI编程更高效！** 🦾
+**⭐ 如果这个项目对你有帮助，请给个Star！**
